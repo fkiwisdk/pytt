@@ -1,0 +1,16 @@
+ <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">{{ infos.title }}</h3>
+                            </div>
+                            <div class="box-body">
+                                {% if context %}
+                                    <ol>
+                                        {% for val in context %}
+                                            <li><a href="{% url 'docs:detail' val.id %}" target="blank">{{ val.title }} - {{ val.ptit }}</a></li>
+                                        {% endfor %}
+                                    </ol>
+                                {% else %}
+                                    <p>No data are available .</p>
+                                {% endif %}
+                            </div>
+                        </div>
